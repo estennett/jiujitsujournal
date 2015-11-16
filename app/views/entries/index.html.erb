@@ -1,12 +1,7 @@
 <h3><%= link_to 'New Entry', new_entry_path %></h3>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <% @entry.each do |entry| %>
 
-<% @entry.each do |entry| %>
+    <p><%= link_to entry.title, entry_path(entry) %></p>
 
-<p>
-  <%= link_to entry.title, entry_path(entry) %>
-</p>
-
-<% end %>
+  <% end %>

@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>JiujitsuJournal</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <h1> Jiujitsu Journal </h1>
+<html lang="en">
+  <head>
+    <title>Jiujitsu Journal</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Shadows+Into+Light' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:600italic' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <div class="user-info">
+              <% if current_user %>
+                <li role="presentation"><%= current_user.email %></li>
+                <li role="presentation"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
+              <% else %>
+                <%= link_to 'Signup', new_user_registration_path %>
+                <%= link_to 'Login', new_user_session_path %>
+              <% end %>
+            </div>
+            <!-- <li role="presentation" class="active"><a href="#">Main</a></li>
+            <li role="presentation"><a href="#">Sign In</a></li> -->
+          </ul>
+        </nav>
+        <h3 class="text-muted">JiuJitsuJournal</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Jiujitsu Journal</h1>
+        <p class="lead">Take daily notes on your training sessions and create your personal Jiujitsu Roadmap.</p>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+
+      <%= yield %>
+
+      <footer class="footer">
+        <p>Project 2 - EJS</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+</html>
+
+
+  <!-- <h1> Jiujitsu Journal </h1>
   <%= link_to 'Entry Home', entries_path %>
 
   <nav>
@@ -26,7 +67,5 @@
   <p class="alert"><%= alert %></p>
 
 
-<%= yield %>
 
-</body>
-</html>
+ -->
