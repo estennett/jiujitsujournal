@@ -1,0 +1,16 @@
+<h2><%= @entry.title %></p></h2>
+<p>Comments and feelings: <%= @entry.comments %></p>
+<p>Sparring partners: <%= @entry.sparring_partners %></p>
+<p>Entry date: <%= @entry.created_at %></p>
+<h2>Techniques</h2>
+
+  <% @technique.each do |technique| %>
+    <p><%= link_to technique.name, entry_technique_path(@entry, technique) %></p>
+    <% end %>
+
+<p><%= link_to 'Add a Technique', new_entry_technique_path(@entry) %></p>
+
+
+<%= link_to 'Entry Home', entries_path %>
+
+<%= link_to 'Edit Entry', edit_entry_path %>

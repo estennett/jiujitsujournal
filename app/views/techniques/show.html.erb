@@ -1,0 +1,6 @@
+<p>Technique name: <%= @technique.name %></p>
+<p>Technique description: <%= @technique.description %></p>
+<p>Youtube URL: <%= @technique.video_url %></p>
+
+
+<%= link_to 'Edit Technique', edit_entry_technique_path(@entry, @technique) %>
