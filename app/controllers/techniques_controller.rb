@@ -10,7 +10,8 @@ class TechniquesController <ApplicationController
   end
 
   def create
-    @technique = Technique.create!(technique_params.merge(user: current_user))
+    @entry = Entry.find(params[:entry_id])
+    @technique = Technique.create!(technique_params.merge(user: current_user, entry: @entry))
     redirect_to (entry_path(params[:entry_id]))
   end
 

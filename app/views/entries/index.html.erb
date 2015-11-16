@@ -2,6 +2,6 @@
 
   <% @entry.each do |entry| %>
 
-    <p><%= link_to entry.title, entry_path(entry) %></p>
+    <p><%=entry.created_at%> : <%= link_to entry.title, entry_path(entry) %></p>
 
   <% end %>

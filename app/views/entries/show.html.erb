@@ -1,12 +1,28 @@
-<h2><%= @entry.title %></p></h2>
-<p>Comments and feelings: <%= @entry.comments %></p>
-<p>Sparring partners: <%= @entry.sparring_partners %></p>
-<p>Entry date: <%= @entry.created_at %></p>
-<h2>Techniques</h2>
+<h2><%= @entry.title %> : <%= @entry.created_at %></p></h2>
 
-  <% @technique.each do |technique| %>
-    <p><%= link_to technique.name, entry_technique_path(@entry, technique) %></p>
-    <% end %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="well items">
+      <h3>Comments and feelings</h3>
+      <p><%= @entry.comments %></p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well items">
+      <h3>Techniques</h3>
+        <% @technique.each do |technique| %>
+        <% if technique.entry_id == @entry.id %>
+          <p><%= link_to technique.name, entry_technique_path(@entry, technique) %></p>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <p><%= link_to 'Add a Technique', new_entry_technique_path(@entry) %></p>
 
