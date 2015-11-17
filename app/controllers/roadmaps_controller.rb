@@ -5,6 +5,7 @@ class RoadmapsController < ApplicationController
   end
 
   def show
+    @technique = Technique.all
     @user = current_user
     @roadmap = Roadmap.find(params[:id])
   end

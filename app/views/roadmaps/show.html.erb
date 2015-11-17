@@ -1,4 +1,10 @@
 <h2><%= @roadmap.category %></h2>
 
+<% @technique.each do |technique| %>
+<% if technique.roadmap_id == @roadmap.id %>
+  <p><%= link_to technique.name, entry_technique_path(technique.entry_id, technique) %></p>
+<% end %>
+<% end %>
+
 <%= link_to 'Edit Category', edit_roadmap_path, :class => "btn btn-default" %>
 <%= link_to 'Roadmap Home', roadmaps_path, :class => "btn btn-default" %>

@@ -7,6 +7,7 @@ class TechniquesController <ApplicationController
   def new
     @entry = Entry.find(params[:entry_id])
     @technique = Technique.new
+    @roadmap = Roadmap.where({user_id: current_user.id})
   end
 
   def create
@@ -23,6 +24,7 @@ class TechniquesController <ApplicationController
   def edit
     @entry = Entry.find(params[:entry_id])
     @technique = Technique.find(params[:id])
+    @roadmap = Roadmap.where({user_id: current_user.id})
   end
 
   def update
@@ -44,6 +46,6 @@ class TechniquesController <ApplicationController
 
   private
   def technique_params
-    params.require(:technique).permit(:name, :description, :video_url)
+    params.require(:technique).permit(:name, :description, :video_url, :roadmap_id)
   end
 end
