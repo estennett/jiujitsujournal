@@ -1,4 +1,4 @@
-<h2><%= @entry.title %> : <%= @entry.created_at %></p></h2>
+<h2><%= @entry.title %> : <%= @entry.created_at.strftime("%B %d, %Y") %></p></h2>
 
 <div class="row">
   <div class="col-md-6">
@@ -15,18 +15,15 @@
           <p><%= link_to technique.name, entry_technique_path(@entry, technique) %></p>
         <% end %>
         <% end %>
+        <p><%= link_to 'Add a Technique', new_entry_technique_path(@entry), :class => "btn btn-default"%></p>
     </div>
   </div>
 </div>
 
 
 
+<div class="nav_buttons">
+  <%= link_to 'Entry Home', entries_path, :class => "btn btn-default"%>
 
-
-
-<p><%= link_to 'Add a Technique', new_entry_technique_path(@entry) %></p>
-
-
-<%= link_to 'Entry Home', entries_path %>
-
-<%= link_to 'Edit Entry', edit_entry_path %>
+  <%= link_to 'Edit Entry', edit_entry_path, :class => "btn btn-default" %>
+</div>

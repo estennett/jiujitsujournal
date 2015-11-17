@@ -1,0 +1,10 @@
+<h2>Your Personal Jiujitsu Roadmap</h2>
+
+<h3>Roadmap Categories:</h3>
+
+<% @roadmap.each do |roadmap| %>
+  <%= link_to roadmap.category, roadmap_path(roadmap), :class => "btn btn-default" %>
+<% end %>
+
+<h3>Options:</h3>
+<p><%= link_to 'Add Category', new_roadmap_path, :class => "btn btn-default"%></p>

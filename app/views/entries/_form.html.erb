@@ -1,16 +1,21 @@
 <%= form_for @entry do |f| %>
 
+<p>
   <%= f.label :title %>
   <%= f.text_field :title %>
-
+</p>
+<p>
   <%= f.label :comments %>
   <%= f.text_field :comments %>
-
+</p>
+<p>
   <%= f.label :sparring_partners %>
   <%= f.text_field :sparring_partners %>
-
+</p>
+<p>
   <%= f.submit %>
+</p>
 
 <% end %>
 
-<%= link_to 'Entry Main', root_path %>
+<!-- <%= link_to 'Entry Main', root_path %> -->
