@@ -4,7 +4,9 @@
         <h3>Entries</h3>
         <h4><%= link_to 'New Entry', new_entry_path %></h4>
             <% @entry.each do |entry| %>
-            <p><%=entry.created_at.strftime("%B %d, %Y")%> : <%= link_to entry.title, entry_path(entry) %></p>
+              <% if entry.user_id == current_user.id %>
+                <p><%=entry.created_at.strftime("%B %d, %Y")%> : <%= link_to entry.title, entry_path(entry) %></p>
+              <% end %>
           <% end %>
       </div>
     </div>

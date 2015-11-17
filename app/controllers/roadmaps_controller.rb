@@ -5,6 +5,7 @@ class RoadmapsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @roadmap = Roadmap.find(params[:id])
   end
 
@@ -13,7 +14,7 @@ class RoadmapsController < ApplicationController
   end
 
   def create
-    @roadmap = Roadmap.create!(roadmap_params)
+    @roadmap = Roadmap.create!(roadmap_params.merge(user: current_user))
     redirect_to roadmaps_path
   end
 

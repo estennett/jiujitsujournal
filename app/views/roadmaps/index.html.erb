@@ -3,7 +3,9 @@
 <h3>Roadmap Categories:</h3>
 
 <% @roadmap.each do |roadmap| %>
-  <%= link_to roadmap.category, roadmap_path(roadmap), :class => "btn btn-default" %>
+  <% if roadmap.user_id == current_user.id %>
+    <%= link_to roadmap.category, roadmap_path(roadmap), :class => "btn btn-default" %>
+  <% end %>
 <% end %>
 
 <h3>Options:</h3>
