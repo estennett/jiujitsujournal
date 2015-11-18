@@ -1,15 +1,15 @@
 <%= form_for ([@entry, @technique]) do |f| %>
 <p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :name, :class => 'form_text' %>
+  <%= f.text_field :name, :class => 'comments'  %>
 </p>
 <p>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.label :description, :class => 'form_text' %>
+  <%= f.text_area :description, :class => 'comments'  %>
 </p>
 <p>
-  <%= f.label :video_url%>
-  <%= f.text_field :video_url%>
+  <%= f.label :video_url, :class => 'form_text'%>
+  <%= f.text_field :video_url, :class => 'comments' %>
 </p>
 <p>
   <%= f.label :roadmap_id %>
@@ -19,5 +19,3 @@
   <%= f.submit %>
 </p>
 <% end %>
-
-<%= link_to 'Entry Main', root_path %>

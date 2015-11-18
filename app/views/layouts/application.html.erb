@@ -14,15 +14,15 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <div class="user-info">
+            <!-- <div class="user-info"> -->
               <% if current_user %>
-                <li role="presentation"><%= current_user.email %></li>
+                <li role="presentation"><a><%= current_user.email %></a></li>
                 <li role="presentation"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
               <% else %>
                 <%= link_to 'Signup', new_user_registration_path %>
                 <%= link_to 'Login', new_user_session_path %>
               <% end %>
-            </div>
+            <!-- </div> -->
             <!-- <li role="presentation" class="active"><a href="#">Main</a></li>
             <li role="presentation"><a href="#">Sign In</a></li> -->
           </ul>
@@ -31,11 +31,18 @@
       </div>
 
       <div class="jumbotron">
+
         <h1>Jiujitsu Journal</h1>
-        <p class="lead">Take daily notes on your training sessions and create your personal Jiujitsu Roadmap.</p>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
       </div>
+      <div class="bottom_nav">
+        <nav>
+          <ul class="nav nav-pills pull_center">
+            <li><%= link_to 'Entry Home', entries_path%></li>
+            <li><%= link_to 'Roadmap', roadmaps_path%></li>
+          </ul>
+        </nav>
+      </div>
+
 
       <%= yield %>
 
