@@ -16,6 +16,7 @@
           <ul class="nav nav-pills pull-right">
             <!-- <div class="user-info"> -->
               <% if current_user %>
+              <!-- I tried to click on my email, but it's not a link -->
                 <li role="presentation"><a><%= current_user.email %></a></li>
                 <li role="presentation"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
               <% else %>
@@ -52,6 +53,7 @@
   </body>
 </html>
 
+<!-- I would delete this commented-out code for the final repo -->
 
   <!-- <h1> Jiujitsu Journal </h1>
   <%= link_to 'Entry Home', entries_path %>
