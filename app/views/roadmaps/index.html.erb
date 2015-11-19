@@ -1,17 +1,20 @@
-<h2>Your Personal Jiujitsu Roadmap</h2>
-
-<p><%= link_to 'Add Category', new_roadmap_path, :class => "btn btn-default"%></p>
-
-<h3>Jiujitsu Roadmap Categories:</h3>
-
-<div class="container">
-<% @roadmap.each do |roadmap| %>
-  <% if can? :read, roadmap %>
-    <div class="col-md-3">
-    <div class="well items">
-      <%= link_to roadmap.category, roadmap_path(roadmap) %>
+<div class="row roadmap_top">
+  <div class="col-md-12">
+    <div class="well">
+      <h2>Jiujitsu Roadmap Categories</h2>
+      <p><%= link_to 'Add Category', new_roadmap_path, :class => "btn btn-success"%></p>
     </div>
-    </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
+
+<div class="row roadmap_body">
+    <% @roadmap.each do |roadmap| %>
+      <% if can? :read, roadmap %>
+        <div class="col-md-3">
+          <div class="well items">
+            <%= link_to roadmap.category, roadmap_path(roadmap) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 </div>

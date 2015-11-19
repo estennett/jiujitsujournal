@@ -1,6 +1,21 @@
-<h2>Technique name: <%= @technique.name %></h2>
-<p>Technique description: <%= @technique.description %></p>
-<p>Youtube URL: <%= @technique.video_url %></p>
 
 
-<%= link_to 'Edit Technique', edit_entry_technique_path(@entry, @technique) %>
+<div class ="row">
+  <h2><%= @technique.name %></h2>
+  <div class="col-md-12">
+    <div class="embed-container">
+      <iframe src=<%= @technique.video_url %>></iframe>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="well items">
+      <h3>Technique Description</h3>
+      <p><%= @technique.description %></p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="well items">
+      <%= link_to 'Edit Technique', edit_entry_technique_path(@entry, @technique), :class => "btn btn-success" %>
+    </div>
+  </div>
+</div>

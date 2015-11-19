@@ -1,5 +1,21 @@
-<h2>Edit Category Below</h2>
+<div class="row">
+  <div class="col-md-12">
+    <div class="well">
+      <h2>Edit Category Below</h2>
+    </div>
+  </div>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Delete!', roadmap_path(@roadmap), method: :delete, class: 'delete' %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="well items">
+        <%= render 'form' %>
+    </div>
+  </div>
+  <div class="col-md-4 roadmap_edit">
+    <div class="well items">
+      <h3>Edit Category</h3>
+      <p><%= link_to 'Delete!', roadmap_path(@roadmap), method: :delete, class: 'delete btn-danger' %></p>
+    </div>
+  </div>
+</div>

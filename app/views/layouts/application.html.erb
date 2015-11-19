@@ -33,22 +33,20 @@
       <div class="jumbotron">
 
         <h1>Jiujitsu Journal</h1>
+        <ul class="nav jumbo">
+          <li class="li"><%= link_to 'Entry Home', entries_path%></li>
+          <li class="li"><%= link_to 'Roadmap', roadmaps_path%></li>
+        </ul>
+
       </div>
-      <div class="bottom_nav">
-        <nav>
-          <ul class="nav nav-pills pull_center">
-            <li><%= link_to 'Entry Home', entries_path%></li>
-            <li><%= link_to 'Roadmap', roadmaps_path%></li>
-          </ul>
-        </nav>
-      </div>
+
 
 
       <%= yield %>
-
       <footer class="footer">
         <p>Project 2 - EJS</p>
       </footer>
+
 
     </div> <!-- /container -->
   </body>
