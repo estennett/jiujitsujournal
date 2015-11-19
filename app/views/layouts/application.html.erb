@@ -16,7 +16,7 @@
           <ul class="nav nav-pills pull-right">
             <!-- <div class="user-info"> -->
               <% if current_user %>
-                <li role="presentation"><a><%= current_user.email %></a></li>
+                <li role="presentation"><%= current_user.email %></li>
                 <li role="presentation"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
               <% else %>
                 <%= link_to 'Signup', new_user_registration_path %>
