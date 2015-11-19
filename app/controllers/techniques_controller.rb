@@ -16,6 +16,7 @@ class TechniquesController <ApplicationController
     redirect_to (entry_path(params[:entry_id]))
   end
 
+# nice use of authorization (I'm assuming that's part of can-can-can?)
   def show
     @entry = Entry.find(params[:entry_id])
     @technique = Technique.find(params[:id])

@@ -1,5 +1,9 @@
 class RoadmapsController < ApplicationController
 
+# So techniques are part of a road map, and are also linked to an entry? It was kind of confusing to 
+# me that I couldn't see techniques through the road map, but couldn't add any. I guess you're supposed
+# to include the technique you practiced in your entry?
+
   def index
     @roadmap = Roadmap.all
   end
@@ -28,7 +32,7 @@ class RoadmapsController < ApplicationController
   def update
     @roadmap = Roadmap.find(params[:id])
     @roadmap.update(roadmap_params)
-    authorize! :update, @roadmap 
+    authorize! :update, @roadmap
     redirect_to roadmap_path
   end
 
