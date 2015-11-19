@@ -3,7 +3,7 @@
       <div class="well items">
         <h3>Entries</h3>
             <% @entry.each do |entry| %>
-              <% if entry.user_id == current_user.id %>
+              <% if can? :read, entry %>
                 <p><%=entry.created_at.strftime("%B %d, %Y")%> : <%= link_to entry.title, entry_path(entry) %></p>
               <% end %>
           <% end %>

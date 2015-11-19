@@ -8,6 +8,7 @@ class RoadmapsController < ApplicationController
     @technique = Technique.all
     @user = current_user
     @roadmap = Roadmap.find(params[:id])
+    authorize! :read, @roadmap
   end
 
   def new
@@ -21,11 +22,13 @@ class RoadmapsController < ApplicationController
 
   def edit
     @roadmap = Roadmap.find(params[:id])
+    authorize! :update, @roadmap
   end
 
   def update
     @roadmap = Roadmap.find(params[:id])
     @roadmap.update(roadmap_params)
+    authorize! :update, @roadmap 
     redirect_to roadmap_path
   end
 

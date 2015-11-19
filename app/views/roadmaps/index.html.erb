@@ -6,7 +6,7 @@
 
 <div class="container">
 <% @roadmap.each do |roadmap| %>
-  <% if roadmap.user_id == current_user.id %>
+  <% if can? :read, roadmap %>
     <div class="col-md-3">
     <div class="well items">
       <%= link_to roadmap.category, roadmap_path(roadmap) %>

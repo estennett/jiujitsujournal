@@ -2,6 +2,7 @@ class EntriesController <ApplicationController
 
   def index
     @entry =Entry.all
+
   end
 
   def new
@@ -16,15 +17,18 @@ class EntriesController <ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @technique = Technique.all
+    authorize! :read, @entry
   end
 
   def edit
     @entry = Entry.find(params[:id])
+    authorize! :update, @entry
   end
 
   def update
     @entry = Entry.find(params[:id])
     @entry.update(entry_params)
+    authorize! :update, @entry
     redirect_to entry_path(@entry)
   end
 

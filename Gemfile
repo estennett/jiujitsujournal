@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#for devise authentication
+gem 'cancancan', '~>1.10'
 #for page css
 gem 'bootstrap-sass', '~>3.3.5'
 #use devise for user log in
