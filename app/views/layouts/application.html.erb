@@ -16,11 +16,11 @@
           <ul class="nav nav-pills pull-right">
             <!-- <div class="user-info"> -->
               <% if current_user %>
-                <li role="presentation"><%= current_user.email %></li>
+                <li role="presentation"><%= link_to current_user.email, root_path %></li>
                 <li role="presentation"><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></li>
               <% else %>
-                <%= link_to 'Signup', new_user_registration_path %>
-                <%= link_to 'Login', new_user_session_path %>
+                <li role="presentation"><%= link_to 'Signup', new_user_registration_path %></li>
+                <li role="presentation"><%= link_to 'Login', new_user_session_path %></li>
               <% end %>
             <!-- </div> -->
             <!-- <li role="presentation" class="active"><a href="#">Main</a></li>
@@ -31,23 +31,18 @@
       </div>
 
       <div class="jumbotron">
-
         <h1>Jiujitsu Journal</h1>
         <ul class="nav jumbo">
           <li class="li"><%= link_to 'Entry Home', entries_path%></li>
           <li class="li"><%= link_to 'Roadmap', roadmaps_path%></li>
         </ul>
-
       </div>
 
-
-
       <%= yield %>
+
       <footer class="footer">
         <p>Project 2 - EJS</p>
       </footer>
-
-
     </div> <!-- /container -->
   </body>
 </html>
