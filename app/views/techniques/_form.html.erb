@@ -11,6 +11,7 @@
   <%= f.label :video_url, :class => 'form_text'%>
   <%= f.text_field :video_url, :class => 'comments' %>
 </p>
+<!-- NHO: Great use of a collection_select!  -->
 <p>
   <%= f.label :roadmap_id %>
   <%= f.collection_select :roadmap_id, @roadmap, :id, :category%>

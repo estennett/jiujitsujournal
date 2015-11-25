@@ -1,7 +1,8 @@
 class EntriesController <ApplicationController
 
   def index
-    @entry =Entry.all
+    # NHO: convention would be @entries
+    @entry =Entry.all # NHO: also something to consider would be how you want these entries ordered...
 
   end
 
