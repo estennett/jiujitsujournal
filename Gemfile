@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
-#for devise authentication
+# NHO: It's great that you are using a lot of gems, make sure to reference the ones you need to use your app in your Readme.
+
+#for user authorization
 gem 'cancancan', '~>1.10'
 #for page css
 gem 'bootstrap-sass', '~>3.3.5'
-#use devise for user log in
+#use devise for user authentication
 gem 'devise'
 #for heroku deployment
 gem 'rails_12factor', group: :production

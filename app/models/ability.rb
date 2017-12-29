@@ -1,6 +1,7 @@
 class Ability
   include CanCan::Ability
 
+# NHO: Great job utilizing CanCanCan! How could we make this code my DRY?
   def initialize(user)
     # if user
       can :read, Entry.where({user_id: user})
